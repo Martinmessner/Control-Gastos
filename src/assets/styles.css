@@ -1,0 +1,99 @@
+.hola {
+  padding: 1em;
+  background-color: rgb(243, 94, 8);
+  display: flex;
+  justify-content: center;
+}
+
+.gastosgenerales {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 1em;
+}
+
+.categorys {
+  padding: 2em;
+  background-color: blue;
+  text-align: center;
+}
+
+.addgastos {
+  padding: 1em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .button {
+    padding: 1em;
+  }
+}
+
+.gastototal {
+  text-align: center;
+  padding: 1em;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  padding: 1em;
+
+  & button,
+  p {
+    padding: 0.4em;
+  }
+}
+
+.boton-categorias {
+  border: none;
+}
+
+.categoriesh2 {
+  display: flex;
+  margin: auto;
+  padding: 1em;
+}
+
+.selectcategory {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+.contenedorgastos {
+  padding: 1em;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  gap: 0.6em;
+  margin: auto;
+}
+
+.contenedortotal-gastos {
+  border: 2px red solid;
+}
+
+.categorias-guardadas {
+  padding: 0.3em 0em;
+}
+
+.buttonimagetrash {
+  border: none;
+  background: none;
+}
+
+.restadeltotal {
+  text-align: center;
+  padding: 2em;
+}
