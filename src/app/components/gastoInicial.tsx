@@ -29,7 +29,7 @@ export default function GastoInicial() {
   return (
     <>
       <header className="hola">
-        <h2>Bienvenidos a Controle sus Gastos 😎 Ruta 2</h2>
+        <h2>Bienvenidos a Controle sus Gastos 😎</h2>
       </header>
 
       <section>

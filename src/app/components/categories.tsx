@@ -8,19 +8,20 @@ export default function CategoriesSelect({
 }: {
   gastoTotal: number;
 }) {
-  const [open, setOpen] = useState(false);
-  const [mostrarMasCategorias, setMostrarMasCategorias] = useState(false);
   const [openCategory, setOpenCategory] = useState(false);
   const [selectCategory, setSelectCategory] = useState<string>("");
-  const [valueCategory, setValueCategory] = useState<string>("");
-  const [dateCategory, setDateCategory] = useState<string>("");
-  const [descriptionCategory, setDescriptionCategory] = useState<string>("");
   const [contenedorTotal, setContenedorTotal] = useState<{
     [x: string]: { date: string; value: string; description: string };
   }>(() => {
     const storedContenedorTotal = localStorage.getItem("contenedorDeGastos");
     return storedContenedorTotal ? JSON.parse(storedContenedorTotal) : {};
   });
+
+  const [open, setOpen] = useState(false);
+  const [mostrarMasCategorias, setMostrarMasCategorias] = useState(false);
+  const [valueCategory, setValueCategory] = useState<string>("");
+  const [dateCategory, setDateCategory] = useState<string>("");
+  const [descriptionCategory, setDescriptionCategory] = useState<string>("");
 
   useEffect(() => {
     localStorage.setItem("contenedorDeGastos", JSON.stringify(contenedorTotal));
@@ -117,7 +118,7 @@ export default function CategoriesSelect({
             const { url, categorias } = data;
 
             return (
-              <div key={index}>
+              <article key={index}>
                 <button
                   className="boton-categorias"
                   onClick={sendCategories(categorias)}
@@ -131,7 +132,7 @@ export default function CategoriesSelect({
                     height="65"
                   />
                 </button>
-              </div>
+              </article>
             );
           })}
 

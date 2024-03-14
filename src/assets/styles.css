@@ -46,12 +46,14 @@
 
   & button,
   p {
-    padding: 0.4em;
+    margin-bottom: 1em;
   }
 }
 
 .boton-categorias {
-  border: none;
+  background: inherit;
+  border: 2px solid white;
+  padding: 1em;
 }
 
 .categoriesh2 {
