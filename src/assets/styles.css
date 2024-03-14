@@ -81,16 +81,20 @@
 }
 
 .contenedortotal-gastos {
-  border: 2px red solid;
-}
+  border: 2px rgb(255, 255, 255) solid;
+  border-radius: 10px;
 
-.categorias-guardadas {
-  padding: 0.3em 0em;
-}
-
-.buttonimagetrash {
-  border: none;
-  background: none;
+  & .categorias-guardadas {
+    padding: 0.4em 1em;
+  }
+  & .buttonimagetrash {
+    border: none;
+    background: none;
+    margin: 0.5em;
+  }
+  & > img {
+    margin: 0.5em;
+  }
 }
 
 .restadeltotal {

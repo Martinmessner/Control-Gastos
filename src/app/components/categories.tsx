@@ -102,6 +102,9 @@ export default function CategoriesSelect({
     });
   };
 
+  const categoriesModified =
+    mostrarMasCategorias === true ? INITIAL_STATE : INITIAL_STATE.slice(0, 5);
+
   return (
     <>
       <button onClick={sendOpenCategory} className="categoriesh2">
@@ -110,7 +113,7 @@ export default function CategoriesSelect({
 
       <section className="categories">
         {openCategory &&
-          INITIAL_STATE.slice(0, 5).map((data, index) => {
+          categoriesModified.map((data, index) => {
             const { url, categorias } = data;
 
             return (
@@ -131,29 +134,7 @@ export default function CategoriesSelect({
               </div>
             );
           })}
-        {mostrarMasCategorias &&
-          INITIAL_STATE.slice(5, -1).map((data, index) => {
-            //Solucion totalmente una horrible., arreglar despues. Momentanea.
-            const { url, categorias } = data;
 
-            return (
-              <div key={index}>
-                <button
-                  className="boton-categorias"
-                  onClick={sendCategories(categorias)}
-                >
-                  <p>{categorias}</p>
-                  <img
-                    src={url}
-                    alt={categorias}
-                    title={categorias}
-                    width="65"
-                    height="65"
-                  />
-                </button>
-              </div>
-            );
-          })}
         {openCategory && (
           <button onClick={MostrarMas} className="boton-categorias">
             <p>{mostrarMasCategorias ? "Ocultar" : "Mostrar Mas"}</p>
@@ -206,7 +187,7 @@ export default function CategoriesSelect({
               ></img>
               <p className="categorias-guardadas">Fecha: {formatDate(date)}</p>
               <p className="categorias-guardadas">{value}$</p>
-              <p>{description}</p>
+              <p className="categorias-guardadas">{description}</p>
               <button
                 className="buttonimagetrash"
                 onClick={() => deleteGasto(key)}
