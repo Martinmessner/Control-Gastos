@@ -28,10 +28,6 @@ export const INITIAL_STATE = [
     url: "/Vehiculo.png",
   },
   {
-    categorias: "Higiene",
-    url: "/Higiene.png",
-  },
-  {
     categorias: "Educacion",
     url: "/Educacion.png",
   },
@@ -55,9 +51,5 @@ export const INITIAL_STATE = [
   {
     categorias: "Cafe",
     url: "/Cafe.png",
-  },
-  {
-    categorias: "Otros",
-    url: "/Otros.png",
   },
 ];
