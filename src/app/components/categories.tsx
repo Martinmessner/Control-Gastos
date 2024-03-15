@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { INITIAL_STATE } from "../db/initial-state";
 import formatDate from "../helpers/formatDate";
 import "../../assets/styles.css";
+import ListAddItems from "./listAddItems";
 
 export default function CategoriesSelect({
   gastoTotal,
@@ -30,6 +31,15 @@ export default function CategoriesSelect({
   const sendCategories = (categorias: string) => () => {
     setSelectCategory(categorias);
     setOpen(true);
+  };
+
+  const deleteGasto = (data: string) => {
+    setContenedorTotal((prevState) => {
+      const updatedState = Object.fromEntries(
+        Object.entries(prevState).filter(([key]) => key !== data)
+      );
+      return updatedState;
+    });
   };
 
   const sendOpenCategory = () => {
@@ -92,15 +102,6 @@ export default function CategoriesSelect({
 
   const MostrarMas = () => {
     setMostrarMasCategorias(!mostrarMasCategorias);
-  };
-
-  const deleteGasto = (data: string) => {
-    setContenedorTotal((prevState) => {
-      const updatedState = Object.fromEntries(
-        Object.entries(prevState).filter(([key]) => key !== data)
-      );
-      return updatedState;
-    });
   };
 
   const categoriesModified =
@@ -177,31 +178,14 @@ export default function CategoriesSelect({
       <article className="contenedorgastos">
         {Object.entries(contenedorTotal).map(
           ([key, { date, value, description }]) => (
-            <section className="contenedortotal-gastos" key={key}>
-              <p className="categorias-guardadas">Categoria: {key}</p>
-              <img
-                alt={key}
-                title={key}
-                width="45"
-                height="45"
-                src={key ? key + ".png" : undefined}
-              ></img>
-              <p className="categorias-guardadas">Fecha: {formatDate(date)}</p>
-              <p className="categorias-guardadas">{value}$</p>
-              <p className="categorias-guardadas">{description}</p>
-              <button
-                className="buttonimagetrash"
-                onClick={() => deleteGasto(key)}
-              >
-                <img
-                  alt="Eliminar"
-                  title="Eliminar"
-                  width="45"
-                  height="45"
-                  src="/trash.webp"
-                />
-              </button>
-            </section>
+            <ListAddItems
+              categoria={key}
+              key={key}
+              date={date}
+              value={value}
+              description={description}
+              deleteGasto={deleteGasto}
+            />
           )
         )}
       </article>
