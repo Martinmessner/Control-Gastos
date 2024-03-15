@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { INITIAL_STATE } from "../db/initial-state";
-import formatDate from "../helpers/formatDate";
 import "../../assets/styles.css";
 import ListAddItems from "./listAddItems";
 
@@ -10,7 +9,6 @@ export default function CategoriesSelect({
   gastoTotal: number;
 }) {
   const [openCategory, setOpenCategory] = useState(false);
-  const [selectCategory, setSelectCategory] = useState<string>("");
   const [contenedorTotal, setContenedorTotal] = useState<{
     [x: string]: { date: string; value: string; description: string };
   }>(() => {
@@ -20,6 +18,7 @@ export default function CategoriesSelect({
 
   const [open, setOpen] = useState(false);
   const [mostrarMasCategorias, setMostrarMasCategorias] = useState(false);
+  const [selectCategory, setSelectCategory] = useState<string>("");
   const [valueCategory, setValueCategory] = useState<string>("");
   const [dateCategory, setDateCategory] = useState<string>("");
   const [descriptionCategory, setDescriptionCategory] = useState<string>("");
