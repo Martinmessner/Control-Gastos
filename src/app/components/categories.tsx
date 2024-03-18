@@ -1,7 +1,141 @@
 import { useEffect, useState } from "react";
 import { INITIAL_STATE } from "../db/initial-state";
 import "../../assets/styles.css";
-import ListAddItems from "./listAddItems";
+import ListAddItems from "./itemsAddedList";
+import LOGICAL from "./sendForm";
+
+export default function CategoriesSelect({
+  gastoTotal,
+}: {
+  gastoTotal: number;
+}) {
+  const [openCategory, setOpenCategory] = useState(false);
+  const [contenedorTotal, setContenedorTotal] = useState<{
+    [x: string]: { date: string; value: string; description: string };
+  }>(() => {
+    const storedContenedorTotal = localStorage.getItem("contenedorDeGastos");
+    return storedContenedorTotal ? JSON.parse(storedContenedorTotal) : {};
+  });
+
+  const [open, setOpen] = useState(false);
+  const [mostrarMasCategorias, setMostrarMasCategorias] = useState(false);
+  const [selectCategory, setSelectCategory] = useState<string>("");
+
+  useEffect(() => {
+    localStorage.setItem("contenedorDeGastos", JSON.stringify(contenedorTotal));
+  }, [contenedorTotal]);
+
+  const sendCategories = (categorias: string) => () => {
+    setSelectCategory(categorias);
+    setOpen(true);
+  };
+
+  const deleteGasto = (data: string) => {
+    setContenedorTotal((prevState) => {
+      const updatedState = Object.fromEntries(
+        Object.entries(prevState).filter(([key]) => key !== data)
+      );
+      return updatedState;
+    });
+  };
+
+  const sendOpenCategory = () => {
+    setOpenCategory(!openCategory);
+  };
+
+  const restaDelTotal = Object.values(contenedorTotal).reduce(
+    (acc, { value }) => {
+      return acc + parseInt(value);
+    },
+    0
+  );
+
+  const MostrarMas = () => {
+    setMostrarMasCategorias(!mostrarMasCategorias);
+  };
+
+  const categoriesModified =
+    mostrarMasCategorias === true ? INITIAL_STATE : INITIAL_STATE.slice(0, 5);
+
+  return (
+    <>
+      <button onClick={sendOpenCategory} className="categoriesh2">
+        {openCategory === true ? "Ocultar Categorias" : "Elige una categoria"}
+      </button>
+
+      <section className="categories">
+        {openCategory &&
+          categoriesModified.map((data, index) => {
+            const { url, categorias } = data;
+
+            return (
+              <article key={index}>
+                <button
+                  className="boton-categorias"
+                  onClick={sendCategories(categorias)}
+                >
+                  <p>{categorias}</p>
+                  <img
+                    src={url}
+                    alt={categorias}
+                    title={categorias}
+                    width="65"
+                    height="65"
+                  />
+                </button>
+              </article>
+            );
+          })}
+
+        {openCategory && (
+          <button onClick={MostrarMas} className="boton-categorias">
+            <p>{mostrarMasCategorias ? "Ocultar" : "Mostrar Mas"}</p>
+            <img width="65" height="65" src="/Otros.png"></img>
+          </button>
+        )}
+      </section>
+
+      <LOGICAL
+        open={open}
+        setOpen={setOpen}
+        setContenedorTotal={setContenedorTotal}
+        selectCategory={selectCategory}
+      />
+
+      <article className="contenedorgastos">
+        {Object.entries(contenedorTotal).map(
+          ([key, { date, value, description }]) => (
+            <ListAddItems
+              categoria={key}
+              key={key}
+              date={date}
+              value={value}
+              description={description}
+              deleteGasto={deleteGasto}
+            />
+          )
+        )}
+      </article>
+
+      <section className="restadeltotal">
+        {gastoTotal && restaDelTotal > 0 && (
+          <div>Resta de Gastos Totales: {gastoTotal - restaDelTotal}$.</div>
+        )}
+      </section>
+    </>
+  );
+}
+
+/* 
+
+
+
+
+
+ import { useEffect, useState } from "react";
+import { INITIAL_STATE } from "../db/initial-state";
+import "../../assets/styles.css";
+import ListAddItems from "./itemsAddedList";
 
 export default function CategoriesSelect({
   gastoTotal,
@@ -197,3 +331,6 @@ export default function CategoriesSelect({
     </>
   );
 }
+
+
+*/

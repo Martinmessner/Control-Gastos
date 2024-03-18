@@ -26,6 +26,10 @@ export default function GastoInicial() {
     }
   };
 
+  console.log("Open " + open);
+  console.log("submit", submit);
+  console.log(gastoTotal);
+
   return (
     <>
       <header className="hola">

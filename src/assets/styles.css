@@ -35,6 +35,15 @@
 .gastototal {
   text-align: center;
   padding: 1em;
+  animation: viewGasto 2s ease forwards;
+}
+@keyframes viewGasto {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .categories {

@@ -1,14 +1,12 @@
 import formatDate from "../helpers/formatDate";
 
 export default function ListAddItems({
-  key,
   categoria,
   date,
   value,
   description,
   deleteGasto,
 }: {
-  key: string;
   categoria: string;
   date: string;
   value: string;
@@ -16,7 +14,7 @@ export default function ListAddItems({
   deleteGasto: (categoria: string) => void;
 }) {
   return (
-    <section className="contenedortotal-gastos" key={key}>
+    <section className="contenedortotal-gastos">
       <p className="categorias-guardadas">Categoria: {categoria}</p>
       <img
         alt={categoria}
