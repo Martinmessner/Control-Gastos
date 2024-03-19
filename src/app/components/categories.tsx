@@ -17,7 +17,6 @@ export default function CategoriesSelect({
   });
   const [open, setOpen] = useState(false);
   const [selectCategory, setSelectCategory] = useState<string>("");
-
   const [openCategory, setOpenCategory] = useState(false);
   const [mostrarMasCategorias, setMostrarMasCategorias] = useState(false);
 
@@ -26,7 +25,6 @@ export default function CategoriesSelect({
   }, [contenedorTotal]);
 
   const sendCategories = (categorias: string) => {
-    console.log(categorias);
     setSelectCategory(categorias);
     setOpen(true);
   };
@@ -40,9 +38,7 @@ export default function CategoriesSelect({
     });
   };
 
-  const sendOpenCategory = () => {
-    setOpenCategory(!openCategory);
-  };
+  const sendOpenCategory = () => setOpenCategory(!openCategory);
 
   const restaDelTotal = Object.values(contenedorTotal).reduce(
     (acc, { value }) => {
@@ -51,9 +47,7 @@ export default function CategoriesSelect({
     0
   );
 
-  const mostrarMas = () => {
-    setMostrarMasCategorias(!mostrarMasCategorias);
-  };
+  const mostrarMas = () => setMostrarMasCategorias(!mostrarMasCategorias);
 
   return (
     <>
