@@ -1,35 +1,41 @@
+import { MouseEventHandler } from "react";
 import { INITIAL_STATE } from "../db/initial-state";
 
 export default function CategoriesModified({
   mostrarMasCategorias,
   sendCategories,
   openCategory,
-  MostrarMas,
+  sendOpenCategory,
+  mostrarMas,
 }: {
   mostrarMasCategorias: boolean;
-  MostrarMas: any;
+  sendOpenCategory: MouseEventHandler<HTMLButtonElement>;
+  mostrarMas: MouseEventHandler<HTMLButtonElement>;
   openCategory: boolean;
   sendCategories: (categorias: string) => void;
 }) {
   const categoriesModified =
     mostrarMasCategorias === true ? INITIAL_STATE : INITIAL_STATE.slice(0, 5);
 
-  console.log("Desde Otro Componente: ", categoriesModified);
-
+  console.log(mostrarMasCategorias);
+  console.log(openCategory);
   return (
     <>
+      <button onClick={sendOpenCategory} className="categoriesh2">
+        {openCategory === true ? "Ocultar Categorias" : "Elige una categoria"}
+      </button>
+
       <section className="categories">
         {openCategory &&
           categoriesModified.map((data, index) => {
             const { url, categorias } = data;
 
-            const handleClick = () => {
-              sendCategories(categorias);
-            };
-
             return (
               <article key={index}>
-                <button className="boton-categorias" onClick={handleClick}>
+                <button
+                  className="boton-categorias"
+                  onClick={() => sendCategories(categorias)}
+                >
                   <p>{categorias}</p>
                   <img
                     src={url}
@@ -42,14 +48,14 @@ export default function CategoriesModified({
               </article>
             );
           })}
-      </section>
 
-      {openCategory && (
-        <button onClick={MostrarMas} className="boton-categorias">
-          <p>{mostrarMasCategorias ? "Ocultar" : "Mostrar Mas"}</p>
-          <img width="65" height="65" src="/Otros.png"></img>
-        </button>
-      )}
+        {openCategory && (
+          <button onClick={mostrarMas} className="boton-categorias">
+            <p>{mostrarMasCategorias ? "Ocultar" : "Mostrar Mas"}</p>
+            <img width="65" height="65" src="/Otros.png"></img>
+          </button>
+        )}
+      </section>
     </>
   );
 }
