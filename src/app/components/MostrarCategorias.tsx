@@ -17,8 +17,6 @@ export default function CategoriesModified({
   const categoriesModified =
     mostrarMasCategorias === true ? INITIAL_STATE : INITIAL_STATE.slice(0, 5);
 
-  console.log(mostrarMasCategorias);
-  console.log(openCategory);
   return (
     <>
       <button onClick={sendOpenCategory} className="categoriesh2">
@@ -41,6 +39,7 @@ export default function CategoriesModified({
                     src={url}
                     alt={categorias}
                     title={categorias}
+                    loading="lazy"
                     width="65"
                     height="65"
                   />

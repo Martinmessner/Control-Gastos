@@ -4,11 +4,7 @@ import ListAddItems from "./itemsAddedList";
 import LOGICAL from "./sendForm";
 import CategoriesModified from "./MostrarCategorias";
 
-export default function CategoriesSelect({
-  gastoTotal,
-}: {
-  gastoTotal: number;
-}) {
+export default function HomePrincipal({ gastoTotal }: { gastoTotal: number }) {
   const [contenedorTotal, setContenedorTotal] = useState<{
     [x: string]: { date: string; value: string; description: string };
   }>(() => {
@@ -91,11 +87,6 @@ export default function CategoriesSelect({
 }
 
 /* 
-
-
-
-
-
  import { useEffect, useState } from "react";
 import { INITIAL_STATE } from "../db/initial-state";
 import "../../assets/styles.css";

@@ -26,13 +26,9 @@ export default function GastoInicial() {
     }
   };
 
-  console.log("Open " + open);
-  console.log("submit", submit);
-  console.log(gastoTotal);
-
   return (
     <>
-      <header className="hola">
+      <header className="header">
         <h2>Bienvenidos a Controle sus Gastos 😎</h2>
       </header>
 
@@ -47,7 +43,7 @@ export default function GastoInicial() {
                 SetgastoTotal(Number(event.target.value));
               }}
             ></input>
-            <button className="button">Agregar</button>
+            <button className="button-addgastos">Agregar Monto</button>
           </form>
         )}
       </section>
@@ -55,8 +51,8 @@ export default function GastoInicial() {
       <div className="addgastos">
         {gastoTotal && <p className="gastototal">{gastoTotal}$</p>}
 
-        <button type="submit" className="button" onClick={changeTest}>
-          {gastoTotal ? "Editar Monto" : "Agregar Monto"}
+        <button type="submit" className="button-addgastos" onClick={changeTest}>
+          {gastoTotal > 0 ? "Editar Monto" : "Agregar Monto"}
         </button>
       </div>
 

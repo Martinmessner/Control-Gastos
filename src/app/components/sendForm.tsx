@@ -83,6 +83,7 @@ export default function LOGICAL({
             name="date"
             onChange={handleDateChange}
             value={dateCategory}
+            required
           />
           <input
             type="number"
@@ -90,6 +91,7 @@ export default function LOGICAL({
             name="categoryValue"
             onChange={handleChange}
             value={valueCategory}
+            required
           />
           <input
             type="text"
@@ -97,9 +99,10 @@ export default function LOGICAL({
             name="descriptionValue"
             onChange={handleDescriptionChange}
             value={descriptionCategory}
+            required
           />
 
-          <button>Enviar</button>
+          <button className="selectcategory-button">Enviar</button>
         </form>
       )}
     </>

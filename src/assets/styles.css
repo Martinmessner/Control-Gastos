@@ -1,8 +1,27 @@
-.hola {
+.header {
   padding: 1em;
   background-color: rgb(243, 94, 8);
   display: flex;
   justify-content: center;
+}
+
+.addgastos {
+  padding: 1em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-addgastos {
+  background-color: #0056ff;
+  border-radius: 8px;
+  padding: 1em;
+  border: none;
+}
+
+.button-addgastos:hover {
+  background-color: #05338d;
 }
 
 .gastosgenerales {
@@ -16,34 +35,35 @@
 
 .categorys {
   padding: 2em;
-  background-color: blue;
+  background-color: #0056ff;
   text-align: center;
-}
-
-.addgastos {
-  padding: 1em;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  & .button {
-    padding: 1em;
-  }
 }
 
 .gastototal {
   text-align: center;
-  padding: 1em;
-  animation: viewGasto 2s ease forwards;
+  font-size: 1.5em;
+  padding: 0em 0.5em;
+  animation: scale-up-vertical-center 1s;
 }
-@keyframes viewGasto {
-  from {
-    opacity: 0;
+@keyframes scale-up-vertical-center {
+  0% {
+    transform: scaleY(0.2);
   }
-  to {
-    opacity: 1;
+  100% {
+    transform: scaleY(1);
   }
+}
+
+.addgastos > input[type="number"] {
+  border: 1px solid #0056ff;
+  outline: 0 none;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
+  border-color: rgb(243, 94, 8);
+  outline: 0 none;
 }
 
 .categories {
@@ -53,16 +73,24 @@
   gap: 1em;
   padding: 1em;
 
-  & button,
   p {
     margin-bottom: 1em;
   }
 }
 
 .boton-categorias {
-  background: inherit;
-  border: 2px solid white;
+  background: #bcbaba;
+  color: black;
+  border: transparent;
   padding: 1em;
+  animation: viewCategories 2s ease forwards;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.boton-categorias:hover {
+  background-color: rgb(243, 94, 8);
 }
 
 .categoriesh2 {
@@ -79,6 +107,20 @@
   padding: 1em;
 }
 
+.selectcategory > button {
+  padding: 1em;
+  border-radius: 8px;
+  border: #bcbaba solid;
+  background-color: #bcbaba;
+  color: black;
+  font-weight: 600;
+}
+
+.selectcategory > button:hover {
+  background-color: rgb(243, 94, 8);
+  border: rgb(243, 94, 8) solid;
+}
+
 .contenedorgastos {
   padding: 1em;
   display: flex;
@@ -91,6 +133,7 @@
   margin: auto;
   animation: viewCategories 2s ease forwards;
 }
+
 @keyframes viewCategories {
   from {
     opacity: 0;
