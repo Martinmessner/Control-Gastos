@@ -22,6 +22,7 @@
 
 .button-addgastos:hover {
   background-color: #05338d;
+  transition: 0.3s all;
 }
 
 .gastosgenerales {
@@ -91,12 +92,22 @@ input[type="date"]:focus {
 
 .boton-categorias:hover {
   background-color: rgb(243, 94, 8);
+  transition: 0.3s all;
 }
 
 .categoriesh2 {
   display: flex;
   margin: auto;
   padding: 1em;
+  background-color: #bcbaba;
+  color: black;
+  font-weight: 600;
+  border: transparent;
+}
+
+.categoriesh2:hover {
+  background-color: rgb(243, 94, 8);
+  transition: 0.3s all;
 }
 
 .selectcategory {
@@ -119,6 +130,7 @@ input[type="date"]:focus {
 .selectcategory > button:hover {
   background-color: rgb(243, 94, 8);
   border: rgb(243, 94, 8) solid;
+  transition: 0.3s all;
 }
 
 .contenedorgastos {
