@@ -1,6 +1,6 @@
 import { type ChangeEvent, useState, FormEvent, useEffect } from "react";
 import "../../assets/styles.css";
-import CategoriesSelect from "./categories";
+import CategoriesSelect from "./Homecategories";
 
 export default function GastoInicial() {
   const [gastoTotal, SetgastoTotal] = useState<number>(() => {

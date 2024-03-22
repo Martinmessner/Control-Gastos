@@ -73,6 +73,8 @@ input[type="date"]:focus {
   justify-content: center;
   gap: 1em;
   padding: 1em;
+  max-width: 800px;
+  margin: auto;
 
   p {
     margin-bottom: 1em;
@@ -103,6 +105,7 @@ input[type="date"]:focus {
   color: black;
   font-weight: 600;
   border: transparent;
+  border-radius: 8px;
 }
 
 .categoriesh2:hover {
@@ -174,4 +177,9 @@ input[type="date"]:focus {
 .restadeltotal {
   text-align: center;
   padding: 2em;
+  background-color: #0056ff;
+  border-radius: 8px;
+  padding: 1em;
+  max-width: 20em;
+  margin: auto;
 }

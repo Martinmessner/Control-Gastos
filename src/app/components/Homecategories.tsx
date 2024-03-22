@@ -77,11 +77,11 @@ export default function HomePrincipal({ gastoTotal }: { gastoTotal: number }) {
         )}
       </article>
 
-      <section className="restadeltotal">
-        {gastoTotal && restaDelTotal > 0 && (
-          <div>Resta de Gastos Totales: {gastoTotal - restaDelTotal}$.</div>
-        )}
-      </section>
+      {gastoTotal && restaDelTotal > 0 && (
+        <section className="restadeltotal">
+          Gastos Totales: {gastoTotal - restaDelTotal}$.
+        </section>
+      )}
     </>
   );
 }

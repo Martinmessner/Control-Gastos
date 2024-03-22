@@ -23,9 +23,9 @@ export default function CategoriesModified({
         {openCategory === true ? "Ocultar Categorias" : "Elige una categoria"}
       </button>
 
-      <section className="categories">
-        {openCategory &&
-          categoriesModified.map((data, index) => {
+      {openCategory && (
+        <section className="categories">
+          {categoriesModified.map((data, index) => {
             const { url, categorias } = data;
 
             return (
@@ -48,13 +48,12 @@ export default function CategoriesModified({
             );
           })}
 
-        {openCategory && (
           <button onClick={mostrarMas} className="boton-categorias">
             <p>{mostrarMasCategorias ? "Ocultar" : "Mostrar Mas"}</p>
-            <img width="65" height="65" src="/Otros.png"></img>
+            <img width="65" height="65" src="/Otros.png" alt="Otros"></img>
           </button>
-        )}
-      </section>
+        </section>
+      )}
     </>
   );
 }

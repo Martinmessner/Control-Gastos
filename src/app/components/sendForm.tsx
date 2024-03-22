@@ -102,7 +102,7 @@ export default function LOGICAL({
             required
           />
 
-          <button className="selectcategory-button">Enviar</button>
+          <button className="selectcategory-button">Agregar</button>
         </form>
       )}
     </>
