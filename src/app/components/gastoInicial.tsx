@@ -1,6 +1,7 @@
 import { type ChangeEvent, useState, FormEvent, useEffect } from "react";
 import "../../assets/styles.css";
 import CategoriesSelect from "./Homecategories";
+import EditSvgIcon from "../helpers/edit";
 
 export default function GastoInicial() {
   const [gastoTotal, SetgastoTotal] = useState<number>(() => {
@@ -52,6 +53,7 @@ export default function GastoInicial() {
         {gastoTotal && <p className="gastototal">{gastoTotal}$</p>}
 
         <button type="submit" className="button-addgastos" onClick={changeTest}>
+          <EditSvgIcon />
           {gastoTotal > 0 ? "Editar Monto" : "Agregar Monto"}
         </button>
       </div>

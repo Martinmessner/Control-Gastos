@@ -18,6 +18,8 @@
   border-radius: 8px;
   padding: 1em;
   border: none;
+  display: flex;
+  align-items: center;
 }
 
 .button-addgastos:hover {
