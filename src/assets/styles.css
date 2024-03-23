@@ -3,6 +3,7 @@
   background-color: rgb(243, 94, 8);
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .addgastos {
@@ -184,4 +185,19 @@ input[type="date"]:focus {
   padding: 1em;
   max-width: 20em;
   margin: auto;
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+  .buttonimagetrash > img,
+  .contenedortotal-gastos > img {
+    height: 38px;
+    width: 38px;
+  }
+
+  .contenedortotal-gastos {
+    border: 1px rgb(255, 255, 255) solid;
+    & .categorias-guardadas {
+      padding: 0.4em;
+    }
+  }
 }
