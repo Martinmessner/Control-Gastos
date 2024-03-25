@@ -122,6 +122,10 @@ input[type="date"]:focus {
   justify-content: center;
   align-items: center;
   padding: 1em;
+
+  & input {
+    border: 1px solid #0056ff;
+  }
 }
 
 .selectcategory > button {
@@ -142,12 +146,12 @@ input[type="date"]:focus {
 .contenedorgastos {
   padding: 1em;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   text-align: center;
   align-items: center;
   flex-wrap: wrap;
   max-width: 1000px;
-  gap: 0.6em;
+  gap: 1em;
   margin: auto;
   animation: viewCategories 2s ease forwards;
 }
@@ -196,8 +200,24 @@ input[type="date"]:focus {
 
   .contenedortotal-gastos {
     border: 1px rgb(255, 255, 255) solid;
-    & .categorias-guardadas {
-      padding: 0.4em;
+  }
+}
+
+@media (max-width: 710px) {
+  .selectcategory {
+    flex-direction: column;
+  }
+  .selectcategory > input {
+    width: 21em;
+    margin: 0.7em;
+  }
+
+  .boton-categorias {
+    padding: 0.5em;
+
+    & .boton-categorias > img {
+      width: 52px;
+      height: 52px;
     }
   }
 }
