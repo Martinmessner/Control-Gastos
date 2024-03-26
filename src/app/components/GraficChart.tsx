@@ -29,6 +29,7 @@ export default function GraphicTotal({
         backgroundColor,
         borderColor,
         hoverBackgroundColor,
+        radius: "90%",
         borderWidth: 1,
         hoverOffset: 4,
       },
