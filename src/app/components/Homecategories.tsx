@@ -84,7 +84,9 @@ export default function HomePrincipal({ gastoTotal }: { gastoTotal: number }) {
         </section>
       )}
 
-      <GraphicTotal contenedorTotal={contenedorTotal} />
+      <section className="grafic">
+        <GraphicTotal contenedorTotal={contenedorTotal} />
+      </section>
     </>
   );
 }

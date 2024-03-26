@@ -49,6 +49,7 @@ export default function GraphicTotal({
           "rgba(255, 159, 64, 1)",
         ],
         borderWidth: 1,
+        hoverOffset: 4,
       },
     ],
   };

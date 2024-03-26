@@ -191,6 +191,11 @@ input[type="date"]:focus {
   margin: auto;
 }
 
+.grafic {
+  max-width: 450px;
+  margin: auto;
+}
+
 @media (min-width: 300px) and (max-width: 600px) {
   .buttonimagetrash > img,
   .contenedortotal-gastos > img {
