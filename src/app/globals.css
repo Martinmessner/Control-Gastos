@@ -44,6 +44,12 @@ body {
   }
 }
 
+@media (prefers-color-scheme: light) {
+  html {
+    color-scheme: light;
+  }
+}
+
 button {
   cursor: pointer;
 }
