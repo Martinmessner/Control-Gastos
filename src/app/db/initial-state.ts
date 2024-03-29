@@ -8,8 +8,8 @@ export const INITIAL_STATE = [
     url: "/Alimentos.png",
   },
   {
-    categorias: "Ahorros",
-    url: "/Ahorros.png",
+    categorias: "Prestamo",
+    url: "/Prestamo.png",
   },
   {
     categorias: "Servicios",
