@@ -1,6 +1,7 @@
 .header {
   padding: 1em;
   background-color: rgb(243, 94, 8);
+  color: #ffffff;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -186,6 +187,7 @@ input[type="date"]:focus {
 .restadeltotal {
   text-align: center;
   padding: 2em;
+  color: #ffffff;
   background-color: #0056ff;
   border-radius: 8px;
   padding: 1em;
