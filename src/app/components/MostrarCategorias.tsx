@@ -50,7 +50,7 @@ export default function CategoriesModified({
 
           <button onClick={mostrarMas} className="boton-categorias">
             <p>{mostrarMasCategorias ? "Ocultar" : "Mostrar Mas"}</p>
-            <img width="65" height="65" src="/Otros.png" alt="Otros"></img>
+            <img width="65" height="65" src="/Otros.webp" alt="Otros"></img>
           </button>
         </section>
       )}
