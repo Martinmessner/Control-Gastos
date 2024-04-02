@@ -27,7 +27,7 @@ export default function CategoriesModified({
         <section className="categories">
           {categoriesModified.map((data, index) => {
             const { url, categorias } = data;
-
+            console.log(url);
             return (
               <article key={index}>
                 <button
