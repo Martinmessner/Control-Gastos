@@ -29,11 +29,10 @@ export default function GastoInicial() {
 
   return (
     <>
-      <header className="header">
-        <h2>Controle sus Gastos</h2>
-      </header>
-
       <section>
+        <header className="header">
+          <h2>Controle sus Gastos</h2>
+        </header>
         {open && (
           <form onSubmit={handleSubmit} className="addgastos">
             <label>Introduzca aqui el Gasto que desee: </label>
