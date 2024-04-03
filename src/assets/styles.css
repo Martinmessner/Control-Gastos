@@ -72,6 +72,10 @@ input[type="date"]:focus {
   outline: 0 none;
 }
 
+input[type="date"] {
+  color: #dddddd;
+}
+
 .categories {
   display: flex;
   flex-wrap: wrap;
