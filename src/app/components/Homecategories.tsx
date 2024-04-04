@@ -44,9 +44,6 @@ export default function HomePrincipal({ gastoTotal }: { gastoTotal: number }) {
     0
   );
 
-  const ahorros = Object.keys(contenedorTotal);
-  console.log(ahorros.includes("Ahorros"));
-
   const mostrarMas = () => setMostrarMasCategorias(!mostrarMasCategorias);
 
   return (
